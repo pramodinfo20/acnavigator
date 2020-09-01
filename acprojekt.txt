@@ -1,0 +1,137 @@
+#Project-ID|Project title|Last change|
+P078432|Demoprojekt 2019-07|2019-08-21|
+#Observer scale|result scale| [that means: the observers give their estimations on a scale from 1 to 6 and the report also shows the results from 1 to 6]
+5|5|
+#Number of observers
+4|
+#Observer ID|Gender|First name|Last name|Mail address|
+B804237|1|Emilia|Erbsenzähler|emilia.erbsenzaehler@profacts.de|
+B235433|0|Ole|Observator|ole.observator@profacts.de|
+B238629|0|Lars|Lässig|lars.laessig@profacts.de|
+B157958|1|Kosta|Kritikos|kosta.kritikos@profacts.de|
+#Number of candidates
+2|
+#Candidate ID|Gender|First name|Last name|Street|Post Code|City|Country|Phone|Mail address|
+K084372|0||Markus|Brechter|Brechtstraße 45|45678|Musterstadt|D|0157-1212121|markusbrechter97@profacts.de|
+K063512|1||Tanja|Widung|Testgasse 12|12345|Testlingen|D|0160-25825825|tanja.widung@profacts.de|
+#Number of dimensions
+4|
+#Dimension ID|Dimension title|Definition (opt.)|Reference value (opt.)|Number of items|
+D075423|Ergebnisorientierung|Hier steht die Definition...||3|
+#Dimension ID|Item ID|flag: item text=1,report text=2|Result category [only for result texts;see scale: in this example 5 lines needed!]|Text|
+D075423|001|1||This is the item text for item 1.|
+D075423|001|2|1|This is the text for the report if the candidate's result for item 1 is 1.|
+D075423|001|2|2|This is the text for the report if the candidate's result for item 1 is 2.|
+D075423|001|2|3|This is the text for the report if the candidate's result for item 1 is 3.|
+D075423|001|2|4|This is the text for the report if the candidate's result for item 1 is 4.|
+D075423|001|2|5|This is the text for the report if the candidate's result for item 1 is 5.|
+D075423|002||This is the item text for item 2.|
+D075423|002|2|1|This is the text for the report if the candidate's result for item 2 is 1.|
+D075423|002|2|2|This is the text for the report if the candidate's result for item 2 is 2.|
+D075423|002|2|3|This is the text for the report if the candidate's result for item 2 is 3.|
+D075423|002|2|4|This is the text for the report if the candidate's result for item 2 is 4.|
+D075423|002|2|5|This is the text for the report if the candidate's result for item 2 is 5.|
+D075423|003||This is the item text for item 3.|
+D075423|003|2|1|This is the text for the report if the candidate's result for item 3 is 1.|
+D075423|003|2|2|This is the text for the report if the candidate's result for item 3 is 2.|
+D075423|003|2|3|This is the text for the report if the candidate's result for item 3 is 3.|
+D075423|003|2|4|This is the text for the report if the candidate's result for item 3 is 4.|
+D075423|003|2|5|This is the text for the report if the candidate's result for item 3 is 5.|
+#Next dimension, same structure...
+D534834|Kommunikationskompetenz|Hier steht die Definition...||3|
+D534834|003|1||This is the item text for item 3.|
+D534834|003|2|1|This is the text for the report if the candidate's result for item 3 is 1.|
+D534834|003|2|2|This is the text for the report if the candidate's result for item 3 is 2.|
+D534834|003|2|3|This is the text for the report if the candidate's result for item 3 is 3.|
+D534834|003|2|4|This is the text for the report if the candidate's result for item 3 is 4.|
+D534834|003|2|5|This is the text for the report if the candidate's result for item 3 is 5.|
+D534834|005||This is the item text for item 5.|
+D534834|005|2|1|This is the text for the report if the candidate's result for item 5 is 1.|
+D534834|005|2|2|This is the text for the report if the candidate's result for item 5 is 2.|
+D534834|005|2|3|This is the text for the report if the candidate's result for item 5 is 3.|
+D534834|005|2|4|This is the text for the report if the candidate's result for item 5 is 4.|
+D534834|005|2|5|This is the text for the report if the candidate's result for item 5 is 5.|
+D534834|005||This is the item text for item 6.|
+D534834|006|1|This is the text for the report if the candidate's result for item 6 is 1.|
+D534834|006|2|2|This is the text for the report if the candidate's result for item 6 is 2.|
+D534834|006|2|3|This is the text for the report if the candidate's result for item 6 is 3.|
+D534834|006|2|4|This is the text for the report if the candidate's result for item 6 is 4.|
+D534834|006|2|5|This is the text for the report if the candidate's result for item 6 is 5.|
+#Next dimension, same structure...
+D327482|Führungskompetenz|Hier steht die Definition...||2|
+D327482|006||This is the item text for item 6.|
+D327482|006|2|1|This is the text for the report if the candidate's result for item 6 is 1.|
+D327482|006|2|2|This is the text for the report if the candidate's result for item 6 is 2.|
+D327482|006|2|3|This is the text for the report if the candidate's result for item 6 is 3.|
+D327482|006|2|4|This is the text for the report if the candidate's result for item 6 is 4.|
+D327482|006|2|5|This is the text for the report if the candidate's result for item 6 is 5.|
+D327482|011||This is the item text for item 11.|
+D327482|011|2|1|This is the text for the report if the candidate's result for item 11 is 1.|
+D327482|011|2|2|This is the text for the report if the candidate's result for item 11 is 2.|
+D327482|011|2|3|This is the text for the report if the candidate's result for item 11 is 3.|
+D327482|011|2|4|This is the text for the report if the candidate's result for item 11 is 4.|
+D327482|011|2|5|This is the text for the report if the candidate's result for item 11 is 5.|
+#Next dimension, same structure...
+D018256|Konfliktmanagement|Hier steht die Definition...||3|
+D018256|005||This is the item text for item 5.|
+D018256|005|2|1|This is the text for the report if the candidate's result for item 5 is 1.|
+D018256|005|2|2|This is the text for the report if the candidate's result for item 5 is 2.|
+D018256|005|2|3|This is the text for the report if the candidate's result for item 5 is 3.|
+D018256|005|2|4|This is the text for the report if the candidate's result for item 5 is 4.|
+D018256|005|2|5|This is the text for the report if the candidate's result for item 5 is 5.|
+D018256|008||This is the item text for item 8.|
+D018256|008|2|1|This is the text for the report if the candidate's result for item 8 is 1.|
+D018256|008|2|2|This is the text for the report if the candidate's result for item 8 is 2.|
+D018256|008|2|3|This is the text for the report if the candidate's result for item 8 is 3.|
+D018256|008|2|4|This is the text for the report if the candidate's result for item 8 is 4.|
+D018256|008|2|5|This is the text for the report if the candidate's result for item 8 is 5.|
+D018256|010||This is the item text for item 10.|
+D018256|010|2|1|This is the text for the report if the candidate's result for item 10 is 1.|
+D018256|010|2|2|This is the text for the report if the candidate's result for item 10 is 2.|
+D018256|010|2|3|This is the text for the report if the candidate's result for item 10 is 3.|
+D018256|010|2|4|This is the text for the report if the candidate's result for item 10 is 4.|
+D018256|010|2|5|This is the text for the report if the candidate's result for item 10 is 5.|
+#Task ID|Task title|preparation time (in minutes)|execution time (in min.)|postprocessing time (in min.)|Number of observers|Number of candidates|Number of dimensions [in this task]|Dimension ID;Used items of this dimension [from 1 to number of dimensions]
+#[If there are no dimensions and items then it is not a task but something like welcome/introducing, observer conference etc - so something without results] 
+U742380|Begrüßung / Einführung|0|5|0|0|2|0|
+U234749|Begrüßung Beobachter|0|5|0|4|0|0|
+U361287|Rollenspiel 1|15|15|5|2|1|2|D327482;006,011|D018256;005,010|
+U428945|Interview|0|30|5|2|1|2|D534834;003,005,006|D075423;001,002,003|
+U138041|Fallstudie|30|15|10|2|D075423;001,003|D327482;006,011|
+U634842|Rollenspiel 2|15|15|5|2|1|2|D534834;005,006|D018256;008,010|
+U046921|Mittagspause|0|60|0|4|2|0|
+U739256|Online Assessment|0|45|0|0|1|0|
+U539212|Unternehmensinfo|0|15|0|0|1|0|
+U529462|Verabschiedung|0|5|0|0|1|0|
+U267204|Beobachterkonferenz|0|60|0|4|0|0|
+#Session ID|starting time|room|task ID|Observer IDs|Candidate IDs|
+S462383|09:00|Raum 'Plenum'|U742380||K084372,K063512|
+S341272|09:10|Raum 'Plenum'|U234749|B804237,B235433,B238629,B157958||
+S442754|09:05|Raum 'Vorbereitung 1'|U361287||K084372|
+S723946|09:05|Raum 'Vorbereitung 2'|U634842||K063512|
+S123823|09:20|Raum 'Kassel'|U361287|B804237,B235433|K084372|
+S936542|09:20|Raum 'Kiel'|U634842|B238629,B157958|K063512|
+S926742|09:35|Raum 'Kassel'|U361287|B804237,B235433||
+S038567|09:35|Raum 'Kiel'|U634842|B238629,B157958|K063512|
+S623874|09:35|Raum 'Vorbereitung 1'|U138041||K084372|
+S959503|09:35|Raum 'Vorbereitung 2'|U138041||K063512|
+S936583|10:35|Raum 'Kassel'|U138041|B804237,B235433|K084372|
+S046492|10:35|Raum 'Kiel'|U138041|B238629,B157958|K063512|
+S025382|10:50|Raum 'Kassel'|U138041|B804237,B235433||
+S604681|10:50|Raum 'Kiel'|U138041|B238629,B157958||
+S356843|10:50|Raum 'Vorbereitung 1'|U634842||K084372|
+S456712|10:50|Raum 'Vorbereitung 2'|U361287||K063512|
+S895553|11:05|Raum 'Kassel'|U634842|B804237,B235433|K084372|
+S534752|11:05|Raum 'Kiel'|U361287|B238629,B157958|K063512|
+S523542|11:20|Raum 'Kassel'|U634842|B804237,B235433||
+S135678|11:20|Raum 'Kiel'|U361287|B238629,B157958||
+S953422|11:20|Raum 'Kassel'|U428945|B804237,B235433|K063512|
+S904237|11:20|Raum 'Kiel'|U428945|B238629,B157958|K084372|
+S850464|11:50|Raum 'Kassel'|U428945|B804237,B235433||
+S272199|11:50|Raum 'Kiel'|U428945|B238629,B157958||
+S051215|12:00|Raum 'Plenum'|U046921|B804237,B235433,B238629,B157958|K084372,K063512|
+S759344|13:00|Raum 'Vorbereitung 1'|U739256||K084372|
+S906349|13:00|Raum 'Vorbereitung 2'|U739256||K063512|
+S936583|13:00|Raum 'Kassel'|U267204|B804237,B235433,B238629,B157958||
+S025643|13:45|Raum 'Plenum'|U539212||K084372,K063512|
+S453281|14:00|Raum 'Plenum'|U529462||K084372,K063512|

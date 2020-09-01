@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags-->
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Candidate review template">
+    <meta name="author" content="Pramod">
+    <meta name="keywords" content="teilnemher, tasks, Dimensions">
+
+	<!-- Title Page-->
+	<title>Homepage V 0.1</title>
+
+	<!-- Main Javascript-->
+    <script src="script/jquery-3.4.1.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+	<script src="script/script.min.js"></script>
+
+	<!-- Main CSS-->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.dropdown-menu a:hover {
+  background-color: #ddd;
+}
+.jumbotron {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #e9ecef;
+   color: Black;
+   text-align: center;
+}
+</style>
+
+</head>
+
+<body>
+    <main>
+			<div class="text-center" style="margin-bottom:0">
+				<a href="#"><img id="headerLogo" src="images/logo.png" alt="pro facts assessment & training" /></a>
+				
+			</div>
+			<header>
+				<div class="navbar navbar-dark bg-blue shadow-sm">
+					<div class="container d-flex justify-content-between">
+						<nav class="navbar navbar-dark bg-blue navbar-expand-sm">
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-7" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbar-list-7">
+								<ul class="navbar-nav">
+									<li class="nav-item dropdown">
+										<a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											eHR &amp; eDiagnostics
+										</a>
+										<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+											 <a class="dropdown-item" href="#">Online Assessment</a>
+											 <a class="dropdown-item" href="main.php?logout">Talent Portal</a>
+											 <a class="dropdown-item" href="main.php?logout">Recruitment Portal</a>
+											 <a class="dropdown-item" href="main.php?logout">ac pilot & ac factory</a>
+											 <a class="dropdown-item" href="main.php?logout">Bewerbermanagement mit System</a>
+											 <a class="dropdown-item" href="main.php?logout">360 feedback</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+						<nav class="navbar navbar-dark bg-blue navbar-expand-sm">
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-7" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbar-list-7">
+								<ul class="navbar-nav">
+									<li class="nav-item dropdown">
+										<a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											Projects
+										</a>
+										<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+											 <a class="dropdown-item" href="#">HR Management - Automobilbranche</a>
+											 <a class="dropdown-item" href="main.php?logout">Recruitment-Portal - Bankenbranche</a>
+											 <a class="dropdown-item" href="main.php?logout">Online Assessment - Versicherungsbranche</a>
+											 <a class="dropdown-item" href="main.php?logout">Talent Management - Industrie</a>
+											 <a class="dropdown-item" href="main.php?logout">Auswahlsystem - Gesundheitsbranche</a>
+											 <a class="dropdown-item" href="main.php?logout">Einzel-Assessment  - Versicherungsbranche</a>
+											 <a class="dropdown-item" href="main.php?logout">Development Center - Energiebranche</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</nav>
+						
+						<a href="#about" class="navbar-brand d-flex align-items-center">Companies </a>
+						<a href="#contact" class="navbar-brand d-flex align-items-center">Contact</a>
+            <nav class="navbar navbar-dark bg-blue navbar-expand-sm">
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-2" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbar-list-2">
+								<ul class="navbar-nav">
+									<li class="nav-item dropdown">
+										<a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											Support
+										</a>
+										<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+											 <a class="dropdown-item" href="#">Frequent Questions</a>
+											 <a class="dropdown-item" href="main.php?logout">Contact</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</nav>
+            
+					</div>
+				</div>
+			</header>
+
+
+			<div id="id01" class="modal">
+				<form class="modal-content animate" method="post" action="login.php">
+					<div class="imgcontainer">
+					  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+					  <img src="images\ident_fr3.jpg" alt="Avatar" class="avatar" >
+					</div>
+
+					<div class="container">
+					  <label for="uname"><b>Username</b></label>
+					  <input type="text" placeholder="Enter Username" name="login" required>
+
+					  <label for="psw"><b>Password</b></label>
+					  <input type="password" placeholder="Enter Password" name="password" required>
+
+					  <button type="submit">Login</button>
+					  <label>
+						<input type="checkbox" checked="checked" name="remember"> Remember me
+					  </label>
+					</div>
+
+					<div class="container" style="background-color:#f1f1f1">
+					  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+					  <span class="psw">Forgot <a href="#" onclick="document.getElementById('id02').style.display='block'" data-toggle="modal">password?</a></span>
+					</div>
+				  </form>
+			</div>
+
+			<div id="id02" class="modal">
+				<form class="modal-content animate" method="post" action="login.php">
+					<div class="imgcontainer">
+					  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+					  <img src="images\ident_fr3.jpg" alt="Avatar" class="avatar" >
+					</div>
+
+					<div class="container">
+					  <label for="uname"><b>Enter EmailId</b></label>
+					  <input type="text" placeholder="Enter EmailId" name="login" required>
+					</div>
+
+					<div class="container" style="background-color:#f1f1f1">
+					  <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+					</div>
+				  </form>
+			</div>
+
+			<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Library</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Data</li>
+  </ol>
+</nav>
+			<div class="container-fluid">
+			<div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+						<div class="row">
+
+                                <div class="col-md-12 small text-center">
+			<p><b>Your partner for intelligent and innovative personnel management!</b><p>
+<p>We are your professional partner in all questions of HR management.</p><p> In order to contribute to your project and company success, we contribute our many years of expertise and our great commitment to cooperation.</p>
+
+<p>Our goal is to make your HR work even more successful!</p>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+&nbsp
+			<div class="jumbotron text-center" style="margin-bottom:0">
+				<p>© 2019 pro facts assessment & training</p>
+			</div>
+			<script>
+			// Get the modal
+			var modal = document.getElementById('id01');
+			var modal = document.getElementById('id02');
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
+			</script>
+
+		</div>
+    </main>
+</body>
+</html>

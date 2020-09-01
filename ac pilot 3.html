@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags-->
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Candidate review template">
+    <meta name="author" content="Pramod">
+    <meta name="keywords" content="teilnemher, tasks, Dimensions">
+
+	<!-- Title Page-->
+	<title>AC Pilot</title>
+
+	<!-- Main Javascript-->
+    <script src="script/jquery-3.4.1.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+
+
+	<!-- Main CSS-->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+
+
+    <style>
+        #dimension-list {
+            max-height: 170px;
+            margin-bottom: 10px;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+
+		 #question-list {
+            max-height: 450px;
+            margin-bottom: 10px;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+
+		.btn-margin {
+            margin: 5px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <main>
+
+        <header>
+            <div class="navbar navbar-dark bg-dark shadow-sm">
+                <div class="container d-flex justify-content-between">
+				<img href="C:\Users\pamu0\Desktop\Free lancing\pages\logo.jpg" class="navbar-brand d-flex align-items-center">
+					<a href="#home" class="navbar-brand d-flex align-items-center">Home</a>
+					  <a href="#news" class="navbar-brand d-flex align-items-center">News</a>
+					  <a href="#contact" class="navbar-brand d-flex align-items-center">Contact</a>
+					  <a href="#about" class="navbar-brand d-flex align-items-center">About</a>
+					  <a href="#support" class="navbar-brand d-flex align-items-center">Support</a>
+					  <a href="C:\Users\pamu0\Desktop\startbootstrap-sb-admin-2-gh-pages\index- admin.html" class="navbar-brand d-flex align-items-center">Dashboard</a>
+						<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+ 					 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbar-list-4">
+     <ul class="navbar-nav">
+         <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <img src="images\ident_fr3.jpg" onerror="this.src='images\img_avatar.png';" width="40" height="40" class="rounded-circle">
+         </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+           <a class="dropdown-item" href="#">Edit Profile</a>
+           <a class="dropdown-item" href="#">Log Out</a>
+         </div>
+       </li>
+     </ul>
+   </div>
+ </nav>
+            </div>
+        </header>
+
+        &nbsp
+        <div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-1">
+					<img src="images\ident_fr3.jpg" class="img-responsive rounded-circle" style="height: 75px; width: 75px; object-fit: cover;">
+				</div>
+				<div class="col-sm-1">
+					<h5 class="row card-title"></br> Kandidat:</h5>
+				</div>
+				<div class="col-sm-5">
+					<h5 class="row card-title" style="color:#00B0F0;"></br>Herr Vorname Teilnehmer 1</h5>
+				</div>
+			</div>
+		&nbsp
+		<div>
+			&nbsp&nbsp&nbsp&nbsp	<a href="project1.php">	<button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick=""><img src="/vendor/fontawesome-free/svgs/solid/arrow-left.svg" width="18" height="18" class=""> zur�ck</button></a>
+            </div>
+			&nbsp
+			<div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+							<div class="row">
+                                <div class="col-md-12 small" id="question-list">
+								<form method="POST" id="#" action="/#.php">
+                                    <table class="table" id="TheBody">
+											<thead style="font-size:15px;" class="header">
+											<tr>
+											  <th scope="col" class="floatThead-col">Dimension</th>
+											  <th scope="col" class="floatThead-col"></th>
+											  <th scope="col" class="floatThead-col"><span title="Dimension: sample dimension 1">UB1</span></th>
+											  <th scope="col" class="floatThead-col"><span title="Dimension: sample dimension 1">UB2</span></th>
+											  <th scope="col" class="floatThead-col"><span title="Dimension: sample dimension 1">UB3</span></th>
+											  <th scope="col" class="floatThead-col"><span title="Dimension: sample dimension 1">UB4</span></th>
+											  <th scope="col" class="floatThead-col"><span title="Dimension: sample dimension 1">UB5</span></th>
+											  <th scope="col" class="floatThead-col"><span title="Dimension: sample dimension 1">UB6</span></th>
+											  <th scope="col" class="floatThead-col"><span title="Dimension: sample dimension 1">UB7</span></th>
+											  <th scope="col" class="floatThead-col"><span title="I am hovering over the text">MW</span></th>
+											  <th scope="col" class="floatThead-col">SD</th>
+											  <th scope="col" class="floatThead-col">Konsens</th>
+											</tr>
+											</thead>
+											<tbody style="font-size:15px;" id="TheBody">
+											</tbody>
+
+									</table>
+									</form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+		<div id="modalPrivacy" class="modal" tabindex="-1" role="dialog">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Zeil- und Ergebnisorientierung </h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+						</div>
+						<div class="modal-body">
+<textarea id="form10" class="md-textarea form-control" rows="5" placeholder="Enter Text Here"></textarea>
+						</div>
+			<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+    </main>
+		<script>
+
+		$(document).ready(function()
+		{
+			Appendubunglist();
+
+		});
+
+		function Appendubunglist()
+		{
+
+
+			// Tasks
+			var ubungArray = ['Zeil- und Ergebnisorientierung',
+								 'Zeil- und Ergebnisorientierung',
+								 'Zeil- und Ergebnisorientierung',
+								 'Zeil- und Ergebnisorientierung',
+								 'Zeil- und Ergebnisorientierung',
+								 'Zeil- und Ergebnisorientierung',
+								 'Zeil- und Ergebnisorientierung',
+								 'Zeil- und Ergebnisorientierung',
+								 'Zeil- und Ergebnisorientierung',
+								 'Zeil- und Ergebnisorientierung'];
+
+			// dimension 1
+			var dim1Array = [4,
+							 4,
+							 4,
+							 4,
+			                 4,
+							 4,
+							 4,
+							 4,
+							 4,
+							 4];
+			// dimension 2
+			var dim2Array = [3,
+							 4,
+							 4,
+							 4,
+			                 4,
+							 4,
+							 4,
+							 4,
+							 4,
+							 4];
+			// dimension 3
+			var dim3Array = [4,
+							 4,
+							 4,
+							 4,
+			                 4,
+							 4,
+							 4,
+							 4,
+							 4,
+							 4];
+			// dimension 4
+			var dim4Array = [4,
+							 4,
+							 4,
+							 4,
+			                 4,
+							 4,
+							 4,
+							 4,
+							 4,
+							 4];
+			// dimension 5
+			var dim5Array = [4,
+							 4,
+							 4,
+							 4,
+			                 4,
+							 4,
+							 4,
+							 4,
+							 4,
+							 4];
+			// dimension 6
+			var dim6Array = [4,
+							 4,
+							 4,
+							 4,
+			                 4,
+							 4,
+							 4,
+							 4,
+							 4,
+							 4];
+			// dimension 7
+			var dim7Array = [4,
+							 4,
+							 4,
+							 4,
+			                 4,
+							 4,
+							 4,
+							 4,
+							 4,
+							 4];
+
+			// average
+			var avgArray = [4,
+							 4,
+							 4,
+							 4,
+			                 4,
+							 4,
+							 4,
+							 4,
+							 4,
+							 4];
+
+			// standard deviation
+			var sdArray = [4,
+							 4,
+							 4,
+							 4,
+			                 4,
+							 4,
+							 4,
+							 4,
+							 4,
+							 4];
+
+			// konsens
+			var konsens = 4;
+
+
+			for(var i = 0;i < ubungArray.length; i++)
+			{
+				var	valuesHtml = '<tr>\
+								  <th scope="row" style="color:black;"><a href="#" class="card-link" data-toggle="modal" data-target="#modalPrivacy">'+ ubungArray[i]
+												+'</a></th>\
+								  <td><a href="" style="color:black;"><img src="images/information.png" alt="info"></a></td>';
+
+				valuesHtml += '<td><a href="" style="color:black;">'+dim1Array[i]+'</a></td>';
+				valuesHtml += '<td><a href="" style="color:black;">'+dim2Array[i]+'</a></td>';
+				valuesHtml += '<td><a href="" style="color:black;">'+dim3Array[i]+'</a></td>';
+				valuesHtml += '<td><a href="" style="color:black;">'+dim4Array[i]+'</a></td>';
+				valuesHtml += '<td><a href="" style="color:black;">'+dim5Array[i]+'</a></td>';
+				valuesHtml += '<td><a href="" style="color:black;">'+dim6Array[i]+'</a></td>';
+				valuesHtml += '<td><a href="" style="color:black;">'+dim7Array[i]+'</a></td>';
+				var avg= (dim1Array[i]+dim2Array[i]+dim3Array[i]+dim4Array[i]+dim5Array[i]+dim6Array[i]+dim7Array[i])/7;
+				valuesHtml += '<td><a href="" style="color:black;">'+avg.toFixed(2)+'</a></td>';
+				valuesHtml += '<td><a href="" style="color:black;">'+sdArray[i]+'</a></td>';
+				valuesHtml += '<td><select>';
+			for(var j = 1;j <= konsens; j++)
+				{
+				valuesHtml +='<option>'+ j +'</option>';
+				}
+			valuesHtml += '</select></td>';
+			valuesHtml += '</tr>';
+			$("#TheBody").append(valuesHtml);
+			}
+		}
+
+
+		    </script>
+</body>
+
+</html>

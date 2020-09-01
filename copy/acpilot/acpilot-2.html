@@ -1,0 +1,312 @@
+<?php
+require_once('../../include/functions.php');
+
+session_start();
+
+if (!$_SESSION['logged_in']) redirect('/main.php');
+
+if ($_SESSION['debug']) {
+	// Error and logs handeling
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+	ini_set('ignore_repeated_errors', 1);
+	ini_set('log_errors', 1);
+}
+
+if (!isset($_SESSION['defaults'])) {
+	$_SESSION['defaults'] = readDefaults('../../acprojekt.txt');
+	$defaults = $_SESSION['defaults'];
+} else {
+	$defaults = $_SESSION['defaults'];
+}
+
+if (!isset($_SESSION['c_teilnehmer']))	$_SESSION['c_teilnehmer'] = '0';
+if (!isset($_SESSION['c_task'])) $_SESSION['c_task'] = '0';
+if (!isset($_SESSION['c_dim']) || isset($_POST['task'])) $_SESSION['c_dim'] = '0';
+
+if (isset($_POST['teilnehmer'])) $_SESSION['c_teilnehmer'] = $_POST['teilnehmer'];
+if (isset($_POST['task'])) $_SESSION['c_task'] = $_POST['task'];
+if (isset($_POST['dimension'])) $_SESSION['c_dim'] = $_POST['dimension'];
+
+$c_task = $_SESSION['c_task'];
+$c_dim = $_SESSION['c_dim'];
+$c_teli = $_SESSION['c_teilnehmer'];
+$user = $_SESSION['user']['login'];
+
+$blob = sql_blob($user, $c_teli);
+$observers = getObservers();
+array_push($observers, 'admin');
+
+if ($_SESSION['debug']) {
+	// pp($_SESSION['data'][$c_teli],"DATA");
+	pp($_POST, "POST");
+	// getObservers_candid_mean();
+}
+
+?>
+
+<!doctype html>
+<html lang="de">
+
+<head>
+  <!-- Required meta tags-->
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Candidate review template">
+    <meta name="author" content="">
+    <meta name="keywords" content="teilnemher, tasks, Dimensions">
+
+	<!-- Title Page-->
+	<title>AC Navigator online</title>
+
+	<!-- Main Javascript-->
+    <script src="script/jquery-3.4.1.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+
+
+	<!-- Main CSS-->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+
+
+    <style>
+
+		 #follow-list {
+            max-height: 370px;
+            margin-bottom: 5px;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: auto;
+        }
+
+		.btn-margin {
+            margin: 5px;
+
+        }
+		input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+    </style>
+
+</head>
+
+<body>
+    <main>
+
+        <header>
+					<div class="navbar navbar-dark bg-blue shadow-sm">
+							<div class="container d-flex justify-content-between">
+			<img href="images\logo.jpg" class="navbar-brand d-flex align-items-center">
+			<a href="main-page.html" class="navbar-brand d-flex align-items-center">Startseite</a>
+				<a href="about.html" class="navbar-brand d-flex align-items-center">About</a>
+				<a href="index-admin.html" class="navbar-brand d-flex align-items-center">Cockpit</a>
+				<nav class="navbar navbar-dark bg-blue navbar-expand-sm">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-2" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbar-list-2">
+						<ul class="navbar-nav">
+							<li class="nav-item dropdown">
+								<a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Support
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+									 <a class="dropdown-item" href="frequent-questions.html">Frequent Questions</a>
+									 <a class="dropdown-item" href="contact.html">Kontakt</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+					<nav class="navbar navbar-dark bg-blue navbar-expand-sm">
+				 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	 <span class="navbar-toggler-icon"></span>
+ </button>
+ <div class="collapse navbar-collapse" id="navbar-list-4">
+	 <ul class="navbar-nav">
+			 <li class="nav-item dropdown">
+			 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				 <img src="images\ident_fr3.jpg" onerror="this.src='images\img_avatar.png';" width="40" height="40" class="rounded-circle">
+			 </a>
+			 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				 <a class="dropdown-item" href="#">
+				 <img src="vendor\fontawesome-free\svgs\regular\user-circle.svg" width="18" height="18" class="rounded-circle">
+				 Mein Profil</a>
+				 <a class="dropdown-item" href="/main.php?logout">
+				 <img src="vendor\fontawesome-free\svgs\solid\sign-out-alt.svg" width="18" height="18" class="">
+				 Abmelden</a>
+			 </div>
+		 </li>
+	 </ul>
+ </div>
+</nav>
+					</div>
+			</header>
+
+			<div class="row">
+					<div class="col-md-12">
+							<div class="card">
+									<div class="card-body">
+											<div class="row">
+													<div class="col-md-6">
+															<div class="row">
+																	<div class="col-sm-3">
+																			<img src="images\candidate_<?=(@$defaults['candidate'][$c_teli]['gender'])?'female':'male'?>.jpg" class="img-responsive rounded-circle" style="height: 75px; width: 75px; object-fit: cover;">
+																	</div>
+
+																	<div class="col-sm-8">
+																			<h5 class="row card-title">Kandidat:</h5>
+																			<div class="row">
+																				<form name="teilnehmer_list" id="teilnehmer_list" action="acpilot-2.php" method="POST">
+																					<select class="form-control form-control-sm" id="teilnehmer" name="teilnehmer" onchange="this.form.submit()">
+																					<option value="" <?=($_SESSION['c_teilnehmer']==0)?'selected':''?> disabled hidden>Choose here</option>
+																					<?php foreach($defaults['candidate'] as $candid):?>
+																					<option value="<?=$candid['id']?>" <?=($_SESSION['c_teilnehmer']===$candid['id'])?'selected':''?> > <?=$candid['first_name']." ".$candid['last_name']?></option>
+																					<?php endforeach;?>
+																				</select>
+																				</form>
+																			</div>
+																	</div>
+															</div>
+													</div>
+
+
+					<div class="col-sm-6">
+																	<h5 class="row card-title">&Uuml;bung:</h5>
+								<div class="row">
+								<form name="task_list" id="task_list" action="acpilot-2.php" method="POST">
+																					<select class="form-control form-control-sm" id="task" name="task" onchange="this.form.submit()">
+										<option value="" <?=($_SESSION['c_task']==0)?'selected':''?> disabled hidden>Choose here</option>
+										<?php foreach($defaults['task'] as $task):
+										if ($task['no_dim']==0) continue;
+										?>
+										<option value="<?=$task['id']?>" <?=($_SESSION['c_task']===$task['id'])?'selected':''?> > <?=$task['title']?></option>
+										<?php endforeach;?>
+									</select>
+								</form>
+							</div>
+							</br>
+							<div class="row">
+								<form name="dim_list" id="dim_list" action="acpilot-2.php" method="POST">
+										<select class="form-control form-control-sm" id="dimension" name="dimension" onchange="this.form.submit()">
+										<option value="" <?=($_SESSION['c_dim']==0)?'selected':''?> disabled hidden>Choose here</option>
+										<?php foreach($defaults['task'][$c_task]['dim'] as $dim => $dim2):?>
+										<option value="<?=$dim?>" <?=($_SESSION['c_dim']===$dim)?'selected':''?> > <?=$defaults['dimension'][$dim]['title']?></option>
+										<?php endforeach;?>
+									</select>
+								</form>
+							</div>
+					</div>
+											</div>
+
+				<div> <br></div>
+
+									</div>
+							</div>
+					</div>
+			</div>
+
+        &nbsp
+        <div class="container-fluid">
+					<a href="acpilot-3.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><img src="vendor\fontawesome-free\svgs\solid\arrow-left.svg" width="18" height="18" class=""> zurück</a>
+		<h5 class="card-title" align="center"><b>Zielorientierung</b></h5>
+			<div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+														<div class="row">
+                                <div class="col-md-12 small">
+                                    <table class="table table-bordered">
+																			<tr><th scope="col">Beobachter</th>
+																				<?php foreach($observers as $observer): ?>
+																				 <td><span><?=getObservers_name($observer)?></span></td>
+																			 	<?php endforeach;?>
+																			</tr>
+																			<tr><th scope="col">MW</th>
+																				<?php foreach($observers as $observer): ?>
+																					<td><span><?=getObservers_candid_mean($observer, $c_teli, $c_task, $c_dim);?></span></td>
+																				<?php endforeach; ?>
+																			</tr>
+																		</table>
+																</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+		&nbsp
+		<h6 class="card-title" align="center"><b>Leuchtturmanker</b></h6>
+			 <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="row">
+
+                        <div class="col-md-12 small">
+
+                            <ul class="list-group list-group-flush" >
+																<li class="list-group-item list-group-item-action">	<div class="row">
+																	<p class="col-md-4"><b></b></p>
+																	<p class="col-md-1"><b>MW </b></p>
+																	<p class="col-md-2"><b>Neu </b></p>
+																	<?php foreach($observers as $observer):?>
+																			<p class="col-md-1"><b><?=getObservers_name($observer, "first")?></b></p>
+																	<?php endforeach;?>
+																	</div>
+                                </li>
+																<?php
+																	$questionsArray = $defaults['task'][$c_task]['dim'][$c_dim];
+																	foreach($questionsArray as $counter):
+																		$question = $defaults['dimension'][$c_dim]['items'][$counter][1][""];
+																?>
+																<li class="list-group-item list-group-item-action">
+																	<div class="row">
+																			<p class="col-md-4"><?=$question?></p>
+																			<div class="col-md-1"><b><?=item_mean($observers, $c_teli, $c_task, $c_dim, $counter);?></b></div>
+																				<div class="col-md-2">
+																						<form method="POST" id="task_mean" name="task_mean" action="acpilot-2.php">
+																							<button type="button" id="decrease" value="Increase Value" class="btn btn-warning btn-margin rounded-circle font-weight-bold" onclick="decreaseValue('<?=$counter;?>')">-</button>
+																								<input type="submit" id="<?=$counter;?>" name="<?=$counter;?>"  value="0" class="btn btn-margin rounded-circle font-weight-bold" onclick="this.form.submit()"/>
+																							<button type="button" id="increase"  value="Decrease Value" class="btn btn-warning btn-margin rounded-circle font-weight-bold" onclick="increaseValue('<?=$counter;?>')">+</button>
+																						<form>
+																				</div>
+																				<?php foreach($observers as $observer):?>
+																						<p class="col-md-1"><b><?=dim_result($observer, $c_teli, $c_task, $c_dim, $counter);?></b></p>
+																				<?php endforeach;?>
+																		</div>
+																	</li>
+																<?php endforeach;?>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+			</div>
+		</div>
+    </main>
+</body>
+
+<script>
+
+function increaseValue(id_num) {
+  var value = parseInt(document.getElementById(id_num).value, 5);
+  value = isNaN(value) ? 0 : value;
+  value++;
+  document.getElementById(id_num).value = value;
+}
+
+function decreaseValue(id_num) {
+  var value = parseInt(document.getElementById(id_num).value, 5);
+  value = isNaN(value) ? 0 : value;
+  value < 1 ? value = 1 : '';
+  value--;
+  document.getElementById(id_num).value = value;
+}
+</script>
+
+</html>

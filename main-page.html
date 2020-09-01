@@ -1,0 +1,158 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags-->
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Candidate review template">
+    <meta name="author" content="Pramod">
+    <meta name="keywords" content="teilnemher, tasks, Dimensions">
+
+	<!-- Title Page-->
+	<title>ACP Online V 0.1 Alpha</title>
+
+	<!-- Main Javascript-->
+    <script src="script/jquery-3.4.1.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+	<script src="script/script.min.js"></script>
+
+	<!-- Main CSS-->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/w3.css" />
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+<style>
+.bg {
+    background-image: url("bg.jpg");
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	object-fit:contain;
+	background-size: 100% 100%;
+  }
+  
+  #mySidenav a {
+  position: absolute;
+  left: -60px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 11px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#support {
+  top: 20px;
+  background-color: #4CAF50;
+}
+
+#faq {
+  top: 80px;
+  background-color: #2196F3;
+}
+
+
+#contact {
+  top: 140px;
+  background-color: #555
+}
+</style>
+
+
+</head>
+
+<body>
+<div class="bg" style="height:90vh;width:100vw;">
+<div id="mySidenav" class="sidenav">
+  <a href="#" id="support">Support  <img src="cog.png" width="20" height="20" class="rounded-circle"></a>
+  <a href="#" id="faq">&nbsp FAQ  &nbsp &nbsp <img src="question-circle.png" width="20" height="20" class="rounded-circle"></a>
+  <a href="#" id="contact">Contact  <img src="phone-square-alt.png" width="20" height="20" class="rounded-circle"></a>
+</div>
+
+			<div >
+				 <p align="center"><font color="#000000" size="+5">ac navigator</font> </br> </br> </br>
+				 <a href="#" href="#login" onclick="document.getElementById('id01').style.display='block'" data-toggle="modal" class="d-none d-sm-inline-block btn btn-primary shadow-sm"> Login</a></p>
+			</div>
+			
+
+
+			<div id="id01" class="modal">
+				<form class="modal-content animate" method="post" action="login.php">
+					<div class="imgcontainer">
+					  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+					  <img src="C:\Users\pamu0\Desktop\profacts\acpilot\admin\img\user-alt.png" alt="Avatar" class="avatar" >
+					</div>
+
+					<div class="container">
+					  <label for="uname"><b>Username</b></label>
+					  <input type="text" placeholder="Enter Username" name="login" required>
+
+					  <label for="psw"><b>Password</b></label>
+					  <input type="password" placeholder="Enter Password" name="password" required>
+
+					  <button type="submit">Login</button>
+					  <label>
+						<input type="checkbox" checked="checked" name="remember"> Remember me
+					  </label>
+					</div>
+
+					<div class="container" style="background-color:#f1f1f1">
+					  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+					  <span class="psw">Forgot <a href="#" onclick="document.getElementById('id02').style.display='block'" data-toggle="modal">password?</a></span>
+					</div>
+				  </form>
+			</div>
+
+			<div id="id02" class="modal">
+				<form class="modal-content animate" method="post" action="login.php">
+					<div class="imgcontainer">
+					  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+					  <img src="img\user-alt.png" alt="Avatar" class="avatar" >
+					</div>
+
+					<div class="container">
+					  <label for="uname"><b>Enter EmailId</b></label>
+					  <input type="text" placeholder="Enter EmailId" name="login" required>
+					</div>
+
+					<div class="container" style="background-color:#f1f1f1">
+					  <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+					</div>
+				  </form>
+			</div>
+  </div>    
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; 2019 profacts assessment & training</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+			<script>
+			// Get the modal
+			var modal = document.getElementById('id01');
+			var modal = document.getElementById('id02');
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
+var slideIndex = 0;
+showSlides();
+
+</script>
+</body>
+</html>

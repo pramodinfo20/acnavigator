@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags-->
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Candidate review template">
+    <meta name="author" content="">
+    <meta name="keywords" content="teilnemher, tasks, Dimensions">
+
+	<!-- Title Page-->
+	<title>AC Pilot</title>
+
+	<!-- Main Javascript-->
+    <script src="script/jquery-3.4.1.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+	<script src="script/script.min.js"></script>
+
+	<!-- Main CSS-->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+
+
+		<style>
+
+			 #question-list {
+				max-height: 200px;
+				margin-bottom: 10px;
+				overflow-y: scroll;
+				-webkit-overflow-scrolling: touch;
+			}
+			#first {
+				max-height: 200px;
+				margin-bottom: 10px;
+				overflow-y: scroll;
+				-webkit-overflow-scrolling: touch;
+			}
+
+			.btn-margin {
+				margin: 5px;
+
+			}
+			.myclass{
+			background-color:#00B0F0;
+			}
+			
+			.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: 1px solid #ccc;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+		</style>
+
+</head>
+
+<body>
+    <main>
+
+				<header>
+				<div class="navbar navbar-dark bg-blue shadow-sm">
+						<div class="container d-flex justify-content-between">
+		<img href="images\logo.jpg" class="navbar-brand d-flex align-items-center">
+		<a href="main-page.html" class="navbar-brand d-flex align-items-center">Startseite</a>
+			<a href="index-admin.html" class="navbar-brand d-flex align-items-center">Cockpit</a>
+			<nav class="navbar navbar-dark bg-blue navbar-expand-sm">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-2" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbar-list-2">
+					<ul class="navbar-nav">
+						<li class="nav-item dropdown">
+							<a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Support
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								 <a class="dropdown-item" href="frequent-questions.html">Frequent Questions</a>
+								 <a class="dropdown-item" href="contact.html">Kontakt</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+				<nav class="navbar navbar-dark bg-blue navbar-expand-sm">
+			 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+ <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbar-list-4">
+ <ul class="navbar-nav">
+		 <li class="nav-item dropdown">
+		 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			 <img src="images\ident_fr3.jpg" onerror="this.src='images\img_avatar.png';" width="40" height="40" class="rounded-circle">
+		 </a>
+		 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+			 <a class="dropdown-item" href="#">
+			 <img src="vendor\fontawesome-free\svgs\regular\user-circle.png" width="18" height="18" class="rounded-circle">
+			 Mein Profil</a>
+			 <a class="dropdown-item" href="/main.php?logout">
+			 <img src="vendor\fontawesome-free\svgs\solid\sign-out-alt.png" width="18" height="18" class="">
+			 Abmelden</a>
+		 </div>
+	 </li>
+ </ul>
+</div>
+</nav>
+				</div>
+		</header>
+
+        &nbsp
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+				<h5 class="card-title" align="center"><b>Create data</b></h5>
+                    <button class="accordion">Dimension </button>
+<div class="panel">
+  <div class="card">
+                        <div class="card-body">
+						<div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+											<button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="">+ Add</button>
+                                        </div>
+										<div class="col-sm-1">
+											<h6 class="row card-title">import:</h6>
+                                        </div>
+										<div class="col-md-2" onload="myFunction()">																																	
+										<input type="file" id="documents-2" multiple size="50" onchange="myFunction()">
+										<p id="demo"></p>
+																																</div>
+                                    </div>
+                                </div>
+                          </div>
+                
+				&nbsp &nbsp &nbsp &nbsp &nbsp
+				<div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+										<input class="form-control form-control-sm" id="title-dimension" name="title" value="" placeholder="Title of Dimension">
+										</div>
+										<div class="col-sm-3">
+											<button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="">Submit</button>
+                                        </div>
+										
+                                </div>
+                          </div>
+						  </div>
+				&nbsp &nbsp &nbsp &nbsp &nbsp
+				 <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+     
+							<div class="row">
+                                <div class="col-md-12 small" id="question-list">
+								<form method="POST" id="#" action="">
+                                    <table class="table" id="">
+											<thead style="font-size:15px;" class="header">
+											<tr>
+											  <th scope="col" class="floatThead-col">No:</th>
+											  <th scope="col" class="floatThead-col">Dimension</th>
+											  <th scope="col" class="floatThead-col"></th>
+											  <th scope="col" class="floatThead-col"></th>
+											  
+											</tr>
+											</thead>
+											<tbody style="font-size:15px;" id="">
+											<tr>
+											<td> 1</td>
+											<td> Kommunikationskompetenz</td>
+											<td> <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="">Delete</button></td>
+											<td> <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="">
+											<img src="vendor/fontawesome-free/svgs/solid/edit.png" width="18" height="18" class=""> Edit</button></td>
+											</tr>
+											<tr>
+											<td> 2</td>
+											<td> Zielorientierung</td>
+											<td> <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="">Delete</button></td>
+											<td> <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="">
+											<img src="vendor/fontawesome-free/svgs/solid/edit.png" width="18" height="18" class=""> Edit</button></td>
+											</tr>
+											<tr>
+											<td> 3</td>
+											<td> Konfliktmanagement</td>
+											<td> <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="">Delete</button></td>
+											<td> <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="">
+											<img src="vendor/fontawesome-free/svgs/solid/edit.png" width="18" height="18" class=""> Edit</button></td>
+											</tr>
+											<tr>
+											<td> 4</td>
+											<td> Methodenkompetenz</td>
+											<td> <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="">Delete</button></td>
+											<td> <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="">
+											<img src="vendor/fontawesome-free/svgs/solid/edit.png" width="18" height="18" class=""> Edit</button></td>
+											</tr>
+											</tbody>
+
+									</table>
+									</form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				</div>
+				 </div>
+</div>
+
+<button class="accordion">Item</button>
+<div class="panel">
+  <div class="card">
+                        <div class="card-body">
+						  &nbsp &nbsp &nbsp &nbsp &nbsp
+						 <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+										<select name="gender" class="form-control form-control-sm" id="dimension">
+                                            <option disabled="disabled" selected="selected">Dimension</option>
+                                            <option>dimension 1 </option>
+                                            <option>dimension 2</option>
+                                            <option>dimension 3</option>
+                                        </select>
+										</div>
+										<div class="col-sm-3">
+											
+                                        </div>
+										
+                                </div>
+                          </div>
+						  </div>
+						 
+				
+           &nbsp &nbsp &nbsp &nbsp &nbsp
+				<div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+										<button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="">+ Add</button>
+										</div>
+										<div class="col-md-4" onload="myFunction()">																																	
+										<input type="file" id="documents-2" multiple size="50" onchange="myFunction()">
+										<p id="demo"></p>
+										</div>
+										<div class="col-sm-3">
+										<select name="gender" class="form-control form-control-sm" id="dimension">
+                                            <option disabled="disabled" selected="selected">Items</option>
+                                            <option>item 1 </option>
+                                            <option>item 2</option>
+                                            <option>item 3</option>
+                                        </select>
+										</div>
+                                </div>
+                          </div>
+						  </div>
+						  
+						  &nbsp &nbsp &nbsp &nbsp &nbsp
+				<div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+										<input class="form-control form-control-sm" id="title-item" name="iem" value="" placeholder="Item text">
+										</div>
+										<div class="col-sm-3">
+											<button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="">Delete</button>
+                                        </div>
+										
+                                </div>
+                          </div>
+						  </div>
+						  
+						   &nbsp &nbsp &nbsp &nbsp &nbsp
+				<div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+										<input class="form-control form-control-sm" id="title-item" name="iem" value="" placeholder="rating 1">
+										</div>
+										<div class="col-sm-3">
+											
+                                        </div>
+										
+                                </div>
+                          </div>
+						  </div>
+						   &nbsp &nbsp &nbsp &nbsp &nbsp
+				<div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+										<input class="form-control form-control-sm" id="title-item" name="iem" value="" placeholder="rating 2">
+										</div>
+										<div class="col-sm-3">
+											
+                                        </div>
+										
+                                </div>
+                          </div>
+						  </div>
+						   &nbsp &nbsp &nbsp &nbsp &nbsp
+				<div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+										<input class="form-control form-control-sm" id="title-item" name="iem" value="" placeholder="rating 3">
+										</div>
+										<div class="col-sm-3">
+											
+                                        </div>
+										
+                                </div>
+                          </div>
+						  </div>
+						   &nbsp &nbsp &nbsp &nbsp &nbsp
+				<div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+										<input class="form-control form-control-sm" id="title-item" name="iem" value="" placeholder="rating 4">
+										</div>
+										<div class="col-sm-3">
+											
+                                        </div>
+										
+                                </div>
+                          </div>
+						  </div>
+						   &nbsp &nbsp &nbsp &nbsp &nbsp
+				<div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+										<input class="form-control form-control-sm" id="title-item" name="iem" value="" placeholder="rating 5">
+										</div>
+										<div class="col-sm-3">
+											
+                                        </div>
+										
+                                </div>
+                          </div>
+						  </div>
+						  
+						    &nbsp &nbsp &nbsp &nbsp &nbsp
+				<div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+										<button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="">Submit</button>
+										</div>
+										<div class="col-sm-3">
+											
+                                        </div>
+										
+                                </div>
+                          </div>
+						  </div>
+				
+				
+			</div>
+		</div>
+</div>
+<button class="accordion">Task</button>
+<div class="panel">
+  <div class="card">
+                        <div class="card-body">
+						<div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+											<button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="">+ Add</button>
+                                        </div>
+										<div class="col-sm-1">
+											<select name="gender" class="form-control form-control-sm" id="dimension">
+                                            <option disabled="disabled" selected="selected">Tasks</option>
+                                            <option>task 1 </option>
+                                            <option>task 2</option>
+                                            <option>task 3</option>
+                                        </select>
+                                        </div>
+										
+                                    </div>
+                                </div>
+                          </div>
+                
+				&nbsp &nbsp &nbsp &nbsp &nbsp
+				<div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+										<input class="form-control form-control-sm" id="title-task" name="task" value="" placeholder="Task">
+										</div>
+										<div class="col-sm-3">
+											
+                                        </div>
+										
+                                </div>
+                          </div>
+						  </div>
+						  &nbsp &nbsp &nbsp &nbsp &nbsp
+                          <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+											<h6 class="row card-title">Time Preparation:</h6>
+                                        </div>
+										<div class="col-sm-6">
+										<input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+										</div>
+                                    </div>
+                                </div>
+                          </div>
+						  &nbsp &nbsp &nbsp &nbsp &nbsp
+                          <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+											<h6 class="row card-title">Time execution:</h6>
+                                        </div>
+										<div class="col-sm-6">
+										<input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+										</div>
+                                    </div>
+                                </div>
+                          </div>
+						  
+						  &nbsp &nbsp &nbsp &nbsp &nbsp
+                          <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+											<h6 class="row card-title">post preparation:</h6>
+                                        </div>
+										<div class="col-sm-6">
+										<input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+										</div>
+                                    </div>
+                                </div>
+                          </div>
+						  
+						  &nbsp &nbsp &nbsp &nbsp &nbsp
+                          <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+											<h6 class="row card-title">Number of Candidates:</h6>
+                                        </div>
+										<div class="col-sm-6">
+										<input type="number" id="candidate" name="candidate" min="0" max="20" value="0" required>
+										</div>
+                                    </div>
+                                </div>
+                          </div>
+						   &nbsp &nbsp &nbsp &nbsp &nbsp
+                          <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+											<h6 class="row card-title">Number of Observers:</h6>
+                                        </div>
+										<div class="col-sm-6">
+										<input type="number" id="candidate" name="candidate" min="0" max="20" value="0" required>
+										</div>
+                                    </div>
+                                </div>
+                          </div>
+				
+				</div>
+				 </div>
+</div>
+				</div>
+			</div>
+    </main>
+	<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+</body>
+</html>
